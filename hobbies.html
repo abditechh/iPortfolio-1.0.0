@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hobbies</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: #13355aec;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      background-color: #000; /* Ensuring background contrast */
+    }
+    .video-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 101%;
+      overflow: hidden;
+      z-index: -1;
+    }
+    .video-container video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      min-width: 100%;
+      min-height: 100%;
+    }
+    .content {
+      position: relative;
+      z-index: 1;
+      padding: 25px;
+      background: rgba(255, 255, 255, 0.6); /* Adjusted for transparency */
+      max-width: 1200px;
+      border-radius: 12px;
+      box-shadow: 0 6px 15px rgba(1, 30, 247, 0.2);
+      font-size: 16px;
+      text-align: center;
+      backdrop-filter: blur(0px); /* Blurred background effect */
+    }
+    h1 {
+      text-align: center;
+      font-size: 28px;
+      margin-bottom: 5px;
+      font-weight: 600;
+      color: #314a62;
+    }
+    p, ul {
+      font-size: 16px;
+      text-align: left;
+      line-height: 1.6;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    ul li {
+      margin-bottom: 10px;
+      padding-left: 20px;
+      position: relative;
+    }
+    ul li::before {
+      content: '\2022';
+      color: #2e7e2e;
+      font-weight: bold;
+      display: inline-block; 
+      width: 1em;
+      margin-left: em;
+      position: absolute;
+      left: 0;
+    }
+    @media (max-width: 768px) {
+      .content {
+        max-width: 90%;
+        font-size: 14px;
+        padding: 20px;
+        margin: 20px auto;
+      }
+    }
+    @media (max-width: 430px) {
+      .content {
+        max-width: 95%;
+        font-size: 14px;
+        padding: 15px;
+        margin: 20px auto;
+      }
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="video-container">
+    <video autoplay muted loop playsinline webkit-playsinline preload="auto">
+      <source src="video (1).mp4" type="video/mp4">
+      <source src="video (1).webm" type="video/webm">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+  <div class="content">
+    <h1>Hobbies</h1>
+    <p>
+      In my free time, I enjoy programming and taking on new challenges in software development, which allows me to continuously improve my technical skills.
+    </p>
+    <ul>
+      <li>
+        On weekends, I often go drone flying with my roommate. This combines my passion for technology with the thrill of outdoor adventures.
+      </li>
+      <li>
+        I am also passionate about fitness and make sure to integrate training and movement into my daily routine to promote both my physical and mental health.
+      </li>
+    </ul>
+  </div>
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      let video = document.querySelector("video");
+      video.play().catch(error => console.log("Autoplay prevented: " + error));
+    });
+  </script>
+</body>
+</html>
